@@ -1,0 +1,34 @@
+# Copy to config.toml and edit. config.toml is gitignored — it holds your paths.
+# Every value can be overridden by an env var: JOBTRAIL_<SECTION>_<KEY>
+# e.g. JOBTRAIL_SYNC_INTERVAL_HOURS=1
+
+[sync]
+enabled        = true
+interval_hours = 6      # how often to pull. Accepts fractions: 0.5 = 30 min.
+run_on_startup = true   # sync once when the server boots
+jitter_seconds = 30     # random spread so restarts don't stampede a shared API
+
+[ingest]
+# "jsonl"  — read a classified file (what an LLM agent writes). Zero credentials.
+# "gmail"  — talk to the Gmail API directly. Self-syncing, needs OAuth setup.
+provider = "jsonl"
+
+[ingest.jsonl]
+path = "data/classified.jsonl"
+
+[ingest.gmail]
+credentials_file = "credentials.json"   # from Google Cloud Console, OAuth desktop client
+token_file       = "token.json"         # written on first run
+lookback_days    = 180
+max_results      = 500
+# Extra Gmail search terms appended to every query. Leave empty for the defaults.
+extra_query      = ""
+
+[rules]
+# Days of silence after which an application is presumed dead. Derived at read
+# time, so changing this takes effect immediately — no re-sync needed.
+ghost_days = 30
+
+[server]
+cors_origins = ["http://localhost:5173"]
+db_path      = "jobs.db"
