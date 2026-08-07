@@ -264,19 +264,20 @@ def test_interval_has_a_floor():
 
 def test_gmail_classifier_drops_job_board_noise():
     drop = providers._classify(
-        "alerts@naukri.com", "✉️ Job | AI Engineer in Hyderabad", "Job invite from recruiter"
+        "alerts@jobboard.example", "✉️ Job | AI Engineer in Metro City",
+        "Job invite from recruiter. Apply now!"
     )
     assert drop is None, "job-board blast must not become an application"
 
 
 def test_gmail_classifier_keeps_real_ats_mail():
     keep = providers._classify(
-        "accenture@myworkday.com", "Time to schedule your interview!", "Congrats on making it"
+        "bigco@myworkday.com", "Time to schedule your interview!", "Congrats on making it"
     )
     assert keep and keep[0] == "interview"
 
     rej = providers._classify(
-        "careers@wipro.com", "Application Update", "Unfortunately we regret to inform you"
+        "careers@bigco.example", "Application Update", "Unfortunately we regret to inform you"
     )
     assert rej and rej[1] == "rejected"
 

@@ -1,20 +1,62 @@
-# Your data — never commit these
+# ---- Your data. Never commit these. -----------------------------------------
 data/*.jsonl
 !data/*.sample.jsonl
 *.db
 *.db-wal
 *.db-shm
+*.sqlite
+*.sqlite3
+
+# ---- Credentials & config ---------------------------------------------------
 config.toml
+config.*.toml
+!config.example.toml
 credentials.json
 token.json
+client_secret*.json
+.env
+.env.*
+!.env.example
+*.pem
+*.key
 
-# Python
+# ---- Python -----------------------------------------------------------------
 __pycache__/
 *.py[cod]
+*.egg-info/
+build/
+dist/
 .venv/
 venv/
+env/
 .pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
 
-# Node
+# ---- Node / frontend ---------------------------------------------------------
 node_modules/
 web/dist/
+web/.vite/
+npm-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# ---- Editors & OS ------------------------------------------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+desktop.ini
+
+# ---- Agent / tooling scratch -------------------------------------------------
+.claude/
+*.log
+tmp/
+scratch/
