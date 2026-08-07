@@ -92,8 +92,9 @@ untouched — a broken feed shows stale data, never an empty dashboard.
 Three decisions worth knowing about, because naive versions of each produce nonsense:
 
 **Response rate counts outbound only.** A recruiter cold-emailing you is not a response to
-an application you never sent. Mixing them produced an 81% response rate and a 100% figure
-for agencies. Split out, the real number was 40%.
+an application you never sent. Blend the two and the number inflates badly — agency-sourced
+conversations approach a 100% "response rate" purely because the recruiter always writes
+first. Split apart, the outbound figure is typically less than half the blended one.
 
 **Time-to-reply skips auto-acknowledgements.** An ATS confirmation lands the same second you
 submit; counting it makes the median 0 days. Measured to the first human reply instead.
