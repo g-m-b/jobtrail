@@ -67,7 +67,8 @@ Drop anything that isn't an application the person actually engaged with:
   approved" from a bank is not a job
 
 Keep recruiter-agency threads: they are real processes. Record the **client** as `company`
-and the agency in `source` (e.g. Accenture via an agency, CBRE via a staffing firm).
+and the agency in `source` — when a staffing firm submits you to a large consultancy, the
+consultancy is the company and `source` is `agency`.
 
 Set `interview_at` whenever a date and time appear — that drives `/api/upcoming`.
 
