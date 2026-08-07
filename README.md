@@ -13,6 +13,26 @@ response rate, where did I stall, and what's scheduled next.*
 - **Honest metrics** — outbound and inbound are never mixed, ghosting is derived from
   silence rather than claimed, and every number you can hand-correct.
 
+![Dashboard overview](docs/screenshots/overview.jpg)
+
+Pipeline funnel, monthly outcomes, source effectiveness and upcoming interviews on one page.
+*(Every screenshot uses the fictional dataset in `data/classified.sample.jsonl` — clone the
+repo and you get exactly this.)*
+
+<details>
+<summary><b>More screenshots</b></summary>
+
+**Applications table** — sortable, filterable, keyboard-operable.
+
+![Applications table](docs/screenshots/applications.jpg)
+
+**Detail drawer** — the full email timeline for one application, its recruiter contacts, and
+the fields you can correct when email didn't see the whole story.
+
+![Application detail](docs/screenshots/detail.jpg)
+
+</details>
+
 ## Quick start
 
 ```sh
